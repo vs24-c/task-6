@@ -1,0 +1,28 @@
+.menu {
+  padding: 25px 25px;
+}
+ul {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: blueviolet;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+  &:hover {
+    transition: color 0.3s ease;
+    color: brown;
+  }
+}

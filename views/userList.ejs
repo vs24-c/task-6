@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User List</title>
+    <link rel="stylesheet" href="/stylesheets/userList.css" />
+    <link rel="stylesheet" href="/stylesheets/header.css" />
+  </head>
+  <body>
+    <%- include('./parts/header.ejs') %>
+    <div class="wrapper">
+      <h1>User List</h1>
+      <main class="page">
+        <div class="page__container">
+          <div class="page__cards card">
+            <div class="card__product">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Age</th>
+                    <th>E-mail</th>
+                    <th>Edit Button</th>
+                    <th>Delete Button</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% user.forEach(user => { %>
+                  <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.name %></td>
+                    <td><%= user.surname %></td>
+                    <td><%= user.age %></td>
+                    <td><%= user.email %></td>
+                    <td><a href="/registration/<%= user.id %>">Edit</a></td>
+                    <td><button onclick="RequestObject.deleteUser(`<%= user.id %>`)" type="button">Delete</button></td>
+                  </tr>
+                  <% }); %>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>
